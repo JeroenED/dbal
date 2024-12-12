@@ -38,7 +38,7 @@ abstract class AbstractMySQLDriver implements VersionAwarePlatformDriver
      */
     public function createDatabasePlatformForVersion($version)
     {
-        $mariadb = stripos($version, 'mariadb') !== false;
+        $mariadb = stripos(strtolower($version), 'mariadb') !== false;
 
         if ($mariadb) {
             $mariaDbVersion = $this->getMariaDbMysqlVersionNumber($version);
